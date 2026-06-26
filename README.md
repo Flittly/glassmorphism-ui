@@ -1,9 +1,9 @@
 # Glassmorphism UI &middot; 毛玻璃 UI
 
-> A CSS-only glassmorphism design system for modern web applications.  
-> 纯 CSS 毛玻璃设计体系，适用于现代 Web 应用。
+> A Claude Code skill that applies frosted glass design to any web frontend.  
+> 一个 Claude Code Skill，为任意前端项目一键施加毛玻璃设计风格。
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Skill](https://img.shields.io/badge/Claude%20Code-Skill-7C3AED)](https://docs.anthropic.com/en/docs/claude-code)
 
 ---
 
@@ -13,56 +13,54 @@
 
 ## English
 
-### Overview
+### What is this?
 
-**Glassmorphism UI** is a curated collection of CSS patterns for building frosted glass (glassmorphism) user interfaces. It encompasses cards, buttons, navigation bars, modals, form controls, and decorative elements — all using pure CSS with `backdrop-filter`, radial gradients, and multi-layer box shadows. No JavaScript libraries, no runtime dependencies.
+**Glassmorphism UI** is a [Claude Code Skill](https://docs.anthropic.com/en/docs/claude-code/skills). When loaded, it teaches Claude how to apply frosted glass (glassmorphism) visual effects to your web application. Claude can restyle existing components, design new pages, or audit your UI for visual consistency — all following the glass design language defined in this skill.
 
-The patterns in this skill were refined across a real-world scientific computing platform (Yangtze River Bank Collapse Warning System), iterated over dozens of design reviews with a focus on visual polish, accessibility, and cross-browser compatibility.
+### What it does
 
-### Features
+| Capability | Description |
+|---|---|
+| **Restyle existing UI** | Convert your current buttons, cards, nav bars to glass aesthetic |
+| **Design new components** | Generate glass-styled cards, modals, forms from scratch |
+| **Audit consistency** | Review your UI and fix elements that don't match the glass system |
+| **Color-coded sections** | Apply distinct accent colors (blue/green/gold) per functional area |
+| **Ant Design integration** | Override Ant Design default styles with glass effects |
+| **Decorative backgrounds** | Add blurred color circles, shine animations, light beams |
 
-- **Liquid Glass Cards** — Radial light gradients + five-layer shadows for premium 3D depth
-- **Glass Buttons** — Primary, outline, and circular icon variants with colored glow
-- **Navigation Tabs** — Color-coded pill-style tabs with shine sweep animation
-- **Blur Circles** — Decorative background pseudo-elements for atmosphere
-- **Modal Dialogs** — Blurred overlay + gradient glass container
-- **Form Controls** — Rounded glass inputs and selects
-- **Ant Design Overrides** — `!important` patterns for styling Ant Design components
-- **Color Palette** — Curated gold/blue/green/pink accent system
+### How Claude uses it
 
-### Quick Start
+When you ask Claude things like:
 
-1. Copy the desired CSS class into your stylesheet.
-2. Apply the class to your element.
-3. Adjust opacity, blur, and colors to fit your design.
+> "Make this sidebar look like frosted glass"  
+> "Style this button with a glass effect"  
+> "Apply our glass design system to the whole page"  
+> "Make this modal look like the editor sidebar"
 
-```css
-/* Minimal glass effect */
-.glass {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(16px) saturate(1.4) brightness(1.05);
-  -webkit-backdrop-filter: blur(16px) saturate(1.4) brightness(1.05);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
+Claude reads this skill and applies the exact CSS patterns — same `backdrop-filter` values, same shadow layers, same border-radius conventions — that were battle-tested on a production system.
+
+### Install
+
+```bash
+# Clone into your skills directory
+git clone <repo-url> ~/.claude/skills/glassmorphism-ui
 ```
 
-### Browser Support
+Or copy the `glassmorphism-ui/` folder into your configured skills path.
 
-| Feature | Chrome | Safari | Firefox | Edge |
-|---------|--------|--------|---------|------|
-| `backdrop-filter` | ✅ 76+ | ✅ 9+ (with `-webkit-`) | ✅ 103+ | ✅ 79+ |
-| `radial-gradient` | ✅ | ✅ | ✅ | ✅ |
-| CSS pseudo-elements | ✅ | ✅ | ✅ | ✅ |
-
-> Always include the `-webkit-` vendor prefix for Safari compatibility.
-
-### Project Structure
+### Skill Structure
 
 ```
 glassmorphism-ui/
-├── SKILL.md          # Full design system reference
+├── SKILL.md          # The skill instructions Claude reads
 └── README.md         # This file
 ```
+
+`SKILL.md` is the actual skill — it contains the CSS patterns, color palette, anti-patterns, and usage guidance that Claude follows when generating or modifying UI code.
+
+### Real-world Basis
+
+The CSS patterns in this skill were refined over 50+ design iterations on the **Yangtze River Bank Collapse Warning System (长江崩岸预警应用系统)** — a React + TypeScript + Mapbox GL JS + Ant Design scientific computing platform. Every blur value, shadow layer, and border radius was tuned against real map overlays, data tables, and form workflows.
 
 ### License
 
@@ -72,57 +70,54 @@ MIT
 
 ## 中文
 
-### 概述
+### 这是什么？
 
-**Glassmorphism UI（毛玻璃 UI）** 是一套精选的 CSS 模式集合，用于构建毛玻璃质感的用户界面。涵盖卡片、按钮、导航栏、弹窗、表单控件和装饰元素——全部使用纯 CSS 实现，依赖 `backdrop-filter`、径向渐变和多层盒阴影，无需任何 JavaScript 库或运行时依赖。
+**Glassmorphism UI（毛玻璃 UI）** 是一个 [Claude Code Skill](https://docs.anthropic.com/en/docs/claude-code/skills)。加载后，它会教会 Claude 如何为你的 Web 应用施加毛玻璃（glassmorphism）视觉风格。Claude 可以改造现有组件、设计新页面、或审查你的 UI 是否风格统一——全部遵循本 Skill 中定义的玻璃设计语言。
 
-这些模式在实际的科学计算平台（长江崩岸监测预警应用系统）中经过数十轮设计评审打磨而成，注重视觉品质、可访问性和跨浏览器兼容性。
+### 能做什么
 
-### 特性
+| 能力 | 说明 |
+|---|---|
+| **改造现有 UI** | 将你的按钮、卡片、导航栏一键转换为毛玻璃风格 |
+| **设计新组件** | 从零生成玻璃质感的卡片、弹窗、表单 |
+| **风格审查** | 检查 UI 中不符合玻璃设计体系的元素并修复 |
+| **按功能区着色** | 编辑器（金）、结果（蓝）、知识库（绿）分段配色 |
+| **Ant Design 集成** | 覆盖 Ant Design 默认样式，施加玻璃效果 |
+| **装饰性背景** | 添加模糊彩圆、光扫动画、光柱等氛围元素 |
 
-- **液体玻璃卡片** — 径向光斑渐变 + 五层阴影，呈现高级 3D 深度感
-- **毛玻璃按钮** — 主按钮、轮廓按钮、圆形图标按钮，带彩色光晕
-- **导航标签页** — 按功能区着色 + 光扫动画
-- **彩色模糊圆** — 利用伪元素实现的背景氛围装饰
-- **弹窗** — 模糊遮罩 + 渐变玻璃容器
-- **表单控件** — 圆角毛玻璃输入框和选择器
-- **Ant Design 覆盖** — 用 `!important` 美化 Ant Design 组件
-- **色板体系** — 精选金/蓝/绿/粉四色点缀方案
+### Claude 如何使用它
 
-### 快速开始
+当你对 Claude 说类似这样的话：
 
-1. 将所需 CSS 类复制到你的样式表中。
-2. 将类名应用到目标元素上。
-3. 根据需要调整透明度、模糊度和颜色。
+> "帮我把这个侧边栏改成毛玻璃效果"  
+> "把这个按钮做成玻璃风格"  
+> "给整个页面应用我们的玻璃设计体系"  
+> "让这个弹窗跟断面编辑器的侧边栏风格一致"
 
-```css
-/* 最简毛玻璃效果 */
-.glass {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(16px) saturate(1.4) brightness(1.05);
-  -webkit-backdrop-filter: blur(16px) saturate(1.4) brightness(1.05);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 16px;
-}
+Claude 会读取这个 Skill，并严格应用其中定义的 CSS 模式——相同的 `backdrop-filter` 数值、相同的阴影层级、相同的圆角规范——这些模式都在一个生产系统中经过了反复打磨。
+
+### 安装
+
+```bash
+# 克隆到你的 skills 目录
+git clone <repo-url> ~/.claude/skills/glassmorphism-ui
 ```
 
-### 浏览器兼容性
+或将 `glassmorphism-ui/` 文件夹复制到你配置的 skills 路径下。
 
-| 特性 | Chrome | Safari | Firefox | Edge |
-|------|--------|--------|---------|------|
-| `backdrop-filter` | ✅ 76+ | ✅ 9+（需 `-webkit-`） | ✅ 103+ | ✅ 79+ |
-| `radial-gradient` | ✅ | ✅ | ✅ | ✅ |
-| CSS 伪元素 | ✅ | ✅ | ✅ | ✅ |
-
-> 务必添加 `-webkit-` 前缀以兼容 Safari。
-
-### 项目结构
+### Skill 结构
 
 ```
 glassmorphism-ui/
-├── SKILL.md          # 完整设计体系参考文档
+├── SKILL.md          # Skill 指令文件（Claude 真正读取的内容）
 └── README.md         # 本文件
 ```
+
+`SKILL.md` 是核心——它包含了 Claude 在生成或修改 UI 代码时所遵循的 CSS 模式、色板、避坑指南和使用规范。
+
+### 实战来源
+
+本 Skill 中的 CSS 模式在**长江崩岸监测预警应用系统**（React + TypeScript + Mapbox GL JS + Ant Design 科学计算平台）上历经 50+ 轮设计迭代打磨而成。每一个模糊值、每一层阴影、每一个圆角半径，都在真实的地图叠加、数据表格和表单交互中反复校准过。
 
 ### 许可证
 
@@ -130,4 +125,4 @@ MIT
 
 ---
 
-<p align="center"><sub>Crafted with ❤️ for modern web aesthetics</sub></p>
+<p align="center"><sub>Built on real design work. Made for Claude.</sub></p>
